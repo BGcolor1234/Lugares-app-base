@@ -16,7 +16,7 @@ export class BienvenidaPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(['/lugares']);
+      this.router.navigate(['/login']);
     }, 3000); // 3 segundos
   }
 
