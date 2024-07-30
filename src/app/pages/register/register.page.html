@@ -1,0 +1,52 @@
+<ion-content>
+  <div class="login-container" style="background-image: url('https://i.pinimg.com/564x/70/68/4b/70684b869f68c393e4997ee8dce78abc.jpg');">
+    <div class="overlay"></div>
+    <div class="logo-container">
+      <img class="logo" src="https://images.vexels.com/content/224223/preview/love-for-travel-logo-f217dc.png" />
+    </div>
+    <div class="text-container">
+      <h2 class="welcome-message">
+        Bienvenido
+        <br>
+        Ingresa tus datos
+      </h2>
+    </div>
+    <div class="form-container">
+      <div class="form-box">
+        <form (ngSubmit)="register()">
+
+          <div class="input-group">
+            <ion-item lines="none" class="input-item">
+              <ion-label position="floating" class="input-label">Usuario</ion-label>
+              <ion-input [(ngModel)]="usuario" name="usuario" type="usuario" required class="input-field"></ion-input>
+            </ion-item>
+          </div>
+
+          <div class="input-group">
+            <ion-item lines="none" class="input-item">
+              <ion-label position="floating" class="input-label">Correo electrónico</ion-label>
+              <ion-input [(ngModel)]="email" name="email" type="email" required class="input-field"></ion-input>
+            </ion-item>
+          </div>
+          <div class="input-group">
+            <ion-item lines="none" class="input-item">
+              <ion-label position="floating" class="input-label">Contraseña</ion-label>
+              <ion-input [(ngModel)]="password" name="password" type="password" required class="input-field"></ion-input>
+            </ion-item>
+          </div>
+          <div class="submit-button">
+            <ion-button expand="block" type="submit">
+              Registrarse
+            </ion-button>
+          </div>
+        </form>
+        <div class="register-link">
+          <ion-text>
+            ¿Ya tienes una cuenta?
+            <a (click)="navigateToLogin()">Inicia sesión</a>
+          </ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

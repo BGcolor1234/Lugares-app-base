@@ -1,0 +1,7 @@
+{
+  "name": "Lugares-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

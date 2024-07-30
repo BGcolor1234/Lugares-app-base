@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Agregar Comentario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div class="ion-padding" style="display: flex; flex-direction: column; height: 100%;">
+  <ion-item>
+    <ion-label position="stacked">Comentario</ion-label>
+    <ion-textarea
+      placeholder="Escribe tu comentario"
+      [(ngModel)]="comentario"
+    ></ion-textarea>
+  </ion-item>
+</div>

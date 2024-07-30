@@ -1,0 +1,31 @@
+.fixed-icon-button {
+  width: 70px;  // Ancho del botón
+  height: 70px; // Alto del botón
+  color: red;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+
+  --background: transparent;
+  --color: red;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+ion-header {
+  --background: #fff; // Cambia el color de fondo según sea necesario
+}
+
+ion-toolbar {
+  --background: #4e45d1; // Cambia el color de fondo del toolbar
+}
+
+ion-title {
+  display: flex;
+  align-items: center;
+}
+
+ion-icon {
+  margin-right: 8px;
+  font-size: 30px;
+}

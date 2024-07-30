@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="centered">
+      {{ lugar.nombre }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openComentarioModal()">
+        <ion-icon name="chatbubbles" class="xd"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="isAdmin" (click)="presentAlert()">
+        <ion-icon name="trash" class="red-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img [src]="lugar.enlace"></ion-img>
+  <br>
+
+  <ion-item-divider class="divo">
+    <ion-title class="centered">
+      {{ lugar.nombre }}
+    </ion-title>
+  </ion-item-divider>
+
+  <br>
+
+  <ion-item-divider>
+    <ion-label>Descripcion</ion-label>
+  </ion-item-divider>
+
+  <p>{{ lugar.descripcion }}</p>
+
+  <ion-item-divider>
+    <ion-label>Comentarios</ion-label>
+  </ion-item-divider>
+  <div *ngFor="let comentario of comentarios">
+    <ion-item>
+      <ion-label>
+        <h2>{{ comentario.usuario }}</h2>
+        <p>{{ comentario.comentario }}</p>
+      </ion-label>
+      <ion-button *ngIf="comentario.usuario === getCurrentUser()?.usuario" (click)="openComentarioModal(comentario.id, comentario.comentario)">
+        <ion-icon name="pencil" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+
+  <ion-button *ngIf="isAdmin" class="fixed-icon-button" id="open-custom-dialog" (click)="openEditarModal()">
+    <ion-icon slot="icon-only" name="create" style="font-size: 70px;"></ion-icon>
+  </ion-button>
+</ion-content>

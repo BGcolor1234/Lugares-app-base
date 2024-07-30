@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-icon name="airplane"></ion-icon> Lugares
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-card-title>Lugares disponibles</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let lugar of lugares" (click)="goToDetails(lugar)">
+        <ion-thumbnail slot="start">
+          <img [src]="lugar.enlace" [alt]="lugar.nombre" />
+        </ion-thumbnail>
+        <ion-label>{{ lugar.nombre }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+
+  <ion-button *ngIf="isAdmin" class="fixed-icon-button" id="open-custom-dialog">
+    <ion-icon slot="icon-only" name="add-circle" style="font-size: 70px;"></ion-icon>
+  </ion-button>
+
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <app-modal-insertar></app-modal-insertar>
+    </ng-template>
+  </ion-modal>
+</ion-content>
