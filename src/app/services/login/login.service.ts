@@ -65,6 +65,11 @@ export class LoginService {
     }
   }
 
+  logout(): void {
+    this.currentUser = null;
+    localStorage.removeItem('currentUser');
+  }
+
   getCurrentUser(): Usuario | null {
     return this.currentUser;
   }

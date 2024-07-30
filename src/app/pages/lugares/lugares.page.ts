@@ -76,4 +76,9 @@ export class LugaresPage implements OnInit {
       this.isAdmin = currentUser.rol === true;
     }
   }
+
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
+  }
 }
